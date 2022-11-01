@@ -1,0 +1,128 @@
+Nested if else
+
+if(cond1)
+{
+	if(cond2)
+	{
+		if(cond3)
+	}
+	else
+	{
+		else block
+	}
+}
+
+else
+{
+	if(cond4)
+	{
+		if(cond5)
+	}
+	else
+	{
+		if(cond6)
+		{
+			if block
+		}
+	}
+}
+
+main block
+
+
+
+
+switch st:
+
+
+switch(cond)
+{
+	case 1:
+		case 1  block
+		break;
+	case 2:
+		case 2  block
+		break;
+	case 3:
+		case 3  block
+		break;
+	case 4:
+		case 4  block
+		break;
+	default:
+		default block
+}
+
+switch(cond)
+{
+	case '1':
+		case 1  block
+		break;
+	case '2':
+		case 2  block
+		break;
+	case '3':
+		case 3  block
+		break;
+	case '4':
+		case 4  block
+		break;
+	default:
+		default block
+}
+
+Note: the case values should be either an integer or a single char constant
+
+
+
+
+decision making and looping
+
+1. while
+2. do while
+3. for
+
+cat:
+1. entry  controlled
+2. exit controlled
+
+
+any looping sts, we need the following process
+
+1. condition
+2. counter
+3. sts to be executed
+4. initialization
+
+
+while:
+
+while(cond)
+{
+	while block;
+}
+
+int it=0;
+
+while(it<=10)
+{
+	printf("\n%d", it);
+	it++;
+}
+
+printf("\nProg Ends");
+
+
+do while:
+
+do{
+	do while block
+}while(cond);
+
+
+int it=0;
+
+do{
+	printf("\n%d", it);
+	it++;
+}while(it<=10);
