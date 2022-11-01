@@ -17,14 +17,16 @@ int main()
 	
 	*/
 
-	int MathMarks[100] = {65,66,67,68};
+	int MathMarks[] = {1,2,3,4};
 
-	MathMarks[0] = 88;
-
+	/*
 	printf("\naddress of MM[0] = %u and value = %d \n",&MathMarks[0],MathMarks[0]);
 	printf("\naddress of MM[1] = %u and value = %d \n",&MathMarks[1],MathMarks[1]);
 	printf("\naddress of MM[2] = %u and value = %d \n",&MathMarks[2],MathMarks[2]);
 	printf("\naddress of MM[3] = %u and value = %d \n",&MathMarks[3],MathMarks[3]);
+	*/
+
+	printf("\n %d \n",MathMarks[MathMarks[2]]);
 
 	return 0;
 }
