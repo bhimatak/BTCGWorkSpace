@@ -1,4 +1,4 @@
-WACP to swap alternate elements in the given list
+Q1. WACP to swap alternate elements in the given list
 l[] ={1,2,3,4,5,6}
 o/p
 l[] = {2,1,4,3,6,5}
@@ -6,3 +6,25 @@ l[] = {2,1,4,3,6,5}
 l[] ={1,2,3,4,5,6,7}
 o/p
 l[] = {2,1,4,3,6,5,7}
+
+
+
+Q2. Find a partition point in array
+
+Given an unsorted array of integers. Find an element such that all the elements to its left are smaller and to its right are greater. Print -1 if no such element exists.
+
+Note that there can be more than one such elements. For example an array which is sorted in increasing order all elements follow the property. We need to find only one such element.
+
+Examples :
+
+Input :  A[] = {4, 3, 2, 5, 8, 6, 7}  
+Output : 5 
+
+Input : A[] = {5, 6, 2, 8, 10, 9, 8} 
+Output : -1
+
+Q3. wacp to arrange all 0's , 1's and 2's in creasing order of the given list
+
+list[]={0,1,1,2,0,1,0,0,2};
+o/p
+list [] = {0,0,0,0,1,1,1,2,2};
