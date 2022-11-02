@@ -5,7 +5,7 @@ int main()
 {
 	char str1[20] = {'\0',};
 	char str2[20] = {'\0', };
-	char str3[20] = { '\0', };
+	char str3[5] = { '\0', };
 	int sLength1 = 0, sLength2 = 0;
 	int cmpValue = 0;
 
@@ -33,9 +33,9 @@ int main()
 		printf("\nstr1 is greater than str2\n");
 
 
-	strncpy(str3, str2, 3);
+	strcpy(str3, str2);
 
-	printf("\nString 3 value: %s\n", str3);
+	printf("\nString 3 value: %s\nLength : %d\n\n", str3, strlen(str3));
 
 
 	return 0;
