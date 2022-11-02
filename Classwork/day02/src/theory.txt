@@ -126,3 +126,11 @@ do{
 	printf("\n%d", it);
 	it++;
 }while(it<=10);
+
+
+for:
+
+for(intial sec;cond;counter)
+{
+	for block
+}
