@@ -13,7 +13,7 @@ IFLAGS = -I $(INC)
 
 TestName: $(OBJ)/main.o $(OBJ)/nameUtility.o
 	$(CC) $(LDFLAGS) $(BIN)/TestName $?
-	#$(CC) $(LDFLAGS) $(BIN)/TestName $(OBJ)/main.o $(OBJ)/nameUtility.o
+	$(CC) $(LDFLAGS) $(BIN)/TestName $(OBJ)/main.o $(OBJ)/nameUtility.o
 
 $(OBJ)/main.o: $(SRC)/main.c
 	$(CC) $(CFLAGS) $(SRC)/main.c $(IFLAGS)
