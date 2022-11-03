@@ -1,1 +1,1 @@
-int SIZE=3;
+int SIZE=500;
