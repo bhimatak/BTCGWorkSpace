@@ -1,11 +1,12 @@
 #include <common.h>
-#define MAX_BUFF 1024
+#define MAX_BUFF 256
 
 int main()
 {
 	char *eName = NULL; 
 	char buffer[MAX_BUFF] = {'\0', };
 	int NoofBytes;
+	int iv;
 
 	printf("\nEnter Name: ");
 	fgets(buffer, MAX_BUFF, stdin);
@@ -27,9 +28,12 @@ int main()
 	strcpy(eName,buffer);
 	printf("\neName: %s\n",eName);
 
+	for(iv=0;iv<strlen(eName);iv++)
+		printf("%c ",eName[iv]);
+
 	bzero(buffer,MAX_BUFF);
 	free(eName);
 	
-
+	printf("\n\n");
 	return 0;
 }
