@@ -7,31 +7,31 @@
 
 char *getLine(char *);
 int getWords(char **, char *);
+char ** copyStr(char (*)[], char**, int);
 //void trim(char *);
 
 int SizeOfLWord(char **, int); 
 
 int main()
 {
-	//char *Line = NULL;
-	char Line[100] = "This is a C Programming Class";
+	char *Line = NULL;
 	char **Words = NULL;
-	//char Words[30][30];
 	char *findStr;
 	char tempLine[100];
 	char sstr[30];
 	int NofWords = 0, i;
 
+	Line = (char *)malloc(100);
 	
 	Words = (char **)malloc(30);
 	for(i=0;i<30;i++)
 		Words[i] = (char *)malloc(30);
 
 	
-	/*if(getLine(Line)==NULL){
+	if(getLine(Line)==NULL){
 		printf("\nSomething Went Wrong!\n");
 		exit(EXIT_FAILURE);
-	}*/
+	}
 
 	printf("\nLine : %s\n", Line);
 	strcpy(tempLine, Line);
@@ -77,43 +77,27 @@ int getWords(char **Words, char *Line)
 {
 	int i;
 	char *tokens =NULL;//[30]={'\0',};
-	tokens = (char *)malloc(30);
-
+	//tokens = (char *)malloc(30);
+	/*char **tempWords = NULL;// = {'\0',};
+	tempWords = (char **)malloc(30);
+	for(i=0;i<30;i++)
+		tempWords[i]=(char *)malloc(100);
+	*/
+	char tempWords[30][100];
 	tokens = strtok(Line," ");
 	i=0;
-	printf("\n%s",tokens);
 	
 	while(tokens != NULL)
 	{
-		// trim(Words[i]);
 		printf("\n%s",tokens);
-		strcpy(Words[i],tokens);
+		strcpy(tempWords[i],tokens);
 		
-		 tokens = strtok(NULL, " ");
+		tokens = strtok(NULL, " ");
 		i++;
 	}
-
+	copyStr(tempWords, Words, i);
 	return i;
 }
-
-/*
-void trim(char *Word)
-{
-	int count=0, noWSL=0, noWSR=0,i;
-	char tempWord[30] = {'\0', };
-
-	for(i=0;i<strlen(Word);i++)
-	{
-		if(isspace(Word[i]))
-		{
-			noWSL++;
-		}
-	}
-
-	printf("\nLWS: %d", noWSL);
-}
-
-*/
 
 int SizeOfLWord(char **Words, int NofWords)
 {
@@ -127,4 +111,23 @@ int SizeOfLWord(char **Words, int NofWords)
 	}
 
 	return lSize;
+}
+
+char ** copyStr(char (*srcStr)[], char**descStr, int Cap)
+{
+	int i;
+	if(srcStr == NULL){
+		
+		return NULL;
+	}
+	// for(i=0;i<Cap;i++)
+	// 	bzero(descStr[i],100);
+	for(i=0;i<Cap;i++){
+		printf("\n%s",(*srcStr));
+
+		strcpy(descStr[i],"Hello");
+		}
+	
+
+	return descStr;
 }
