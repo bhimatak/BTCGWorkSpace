@@ -1,0 +1,22 @@
+CC = gcc
+
+INC = ../inc
+SRC = ../src
+BIN = ../bin
+OBJ = ../obj
+
+CFLAGES = -c -g -Wall
+LDFLAGES = -O
+IFLAGS = -I $(INC)
+
+a.out:$(OBJ)/server.o
+ $(CC) $(LDFLAGS) $(BIN)/a.out $?
+$(OBJ)/server.o:$(SRC)/server.c
+ $(CC) $(CFLAGS) $(SRC)/server.c $(IFLAGS)
+ mv server.o $(OBJ)/
+
+clean:
+          rm -f a.out *.o
+          rm -f $(OBJ)/*
+          rm -f(BIN)/*
+          @echo "cleaning is done!"
