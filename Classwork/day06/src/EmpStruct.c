@@ -42,10 +42,10 @@ void getEmpDetails(struct EmpStruct E[], int n)
 
 int findEmpDetails(struct EmpStruct *E, char *Name, int N)
 {
-	int N1 = sizeof(E)/sizeof(E[0]);
+	//int N1 = sizeof(E)/sizeof(E[0]);
 	int iv, flag = 0;
 
-	for(iv=0;iv<N1;iv++)
+	for(iv=0;iv<N;iv++)
 	{
 		if(strcmp(E[iv].eName, Name)==0)
 		{
