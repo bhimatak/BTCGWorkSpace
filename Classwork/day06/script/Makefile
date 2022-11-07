@@ -12,7 +12,7 @@ LDFLAGS = -o
 IFLAGS = -I $(INC)
 
 
-all: app1 app2
+all: app1 app2 app3
 
 app1: $(OBJ)/main1.o
 	$(CC) $(LDFLAGS) $(BIN)/app1 $?
@@ -20,12 +20,19 @@ app1: $(OBJ)/main1.o
 app2: $(OBJ)/main2.o
 	$(CC) $(LDFLAGS) $(BIN)/app2 $?
 
+app3: $(OBJ)/main3.o
+	$(CC) $(LDFLAGS) $(BIN)/app3 $?
+
 $(OBJ)/main1.o: $(SRC)/main1.c
 	$(CC) $(CFLAGS) $(SRC)/main1.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
 $(OBJ)/main2.o: $(SRC)/main2.c
 	$(CC) $(CFLAGS) $(SRC)/main2.c $(IFLAGS)
+	mv *.o $(OBJ)/
+
+$(OBJ)/main3.o: $(SRC)/main3.c
+	$(CC) $(CFLAGS) $(SRC)/main3.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
 
