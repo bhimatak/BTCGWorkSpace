@@ -1,0 +1,18 @@
+CC=gcc
+SRC=src
+INC=inc
+BIN=bin
+OBJ=obj
+CFlags=-c -g -Wall
+all:$(BIN)/day13
+$(BIN)/day13: $(OBJ)/day13.o
+	$(CC) -o $(BIN)/day13 $(OBJ)/day13.o
+	
+$(OBJ)/day13.o:$(SRC)/day13.c
+	$(CC) -c $(SRC)/day13.c -I $(INC)/
+	mv day13.o $(OBJ)/
+clean: 
+	rm -f a.out *.o	
+	rm -f $(OBJ)/*
+	rm -f $(BIN)/*
+	@echo "Cleaning Done!"
