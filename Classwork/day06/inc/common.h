@@ -7,7 +7,7 @@
 #include <string.h>
 
 #define BUFF 256
-
+#define SIZE 10
 
 
 #endif
