@@ -29,7 +29,7 @@ int main()
 		printf("\n\tAddress: ");
 		scanf("%s", ePtr->eAddr);
 		printf("\n\tPhone Number: ");
-		scanf("%d",&ePtr->ePhone);
+  		scanf("%d",&ePtr->ePhone);
 	}
 
 	ePtr = E; //rebasing to the BA of head of the array
