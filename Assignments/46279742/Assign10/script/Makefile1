@@ -1,0 +1,23 @@
+CC = gcc
+
+SCR = scr
+INC = inc
+BIN = bin
+OBJ = obj
+
+all: $(BIN)/app1
+
+SetUp:
+			  mkdir $(OBJ) $(BIN)
+$(BIN)/app1: $(OBJ)/3d.o
+		        $(CC) -o $(BIN)/app1 $(OBJ)/3d.o
+
+$(OBJ)/3d.o: $(SCR)/3d.o
+	      $(CC) -c $(SCR)/3d.c -I $(INC)/
+	      mv 3d.o $(OBJ)/
+clean:
+			rm -f a.out *.o
+		        rm -f $(OBJ)/*
+			rm -f $(BIN)/*
+			@echo "Cleaning Done!"
+
