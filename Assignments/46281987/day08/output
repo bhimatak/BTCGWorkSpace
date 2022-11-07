@@ -1,0 +1,9 @@
+In main():
+   x is 300 and is stored at 0x7ffffffee13c.
+   xptr points to 0x7ffffffee13c which holds 300.
+In display():
+   z is 300 and is stored at 0x7ffffffee11c.
+   zptr points to 0x7ffffffee13c which holds 100.
+In display():
+   z is 100 and is stored at 0x7ffffffee11c.
+   zptr points to 0x7ffffffee13c which holds 100.
