@@ -1,0 +1,130 @@
+==509== Memcheck, a memory error detector
+==509== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==509== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==509== Command: ./bin/3e
+==509== Parent PID: 13
+==509== 
+--509-- 
+--509-- Valgrind options:
+--509--    -v
+--509--    --tool=memcheck
+--509--    --leak-check=full
+--509--    --show-reachable=yes
+--509--    --track-origins=yes
+--509--    --log-file=valRpt.txt
+--509-- Contents of /proc/version:
+--509--   Linux version 4.4.0-19041-Microsoft (Microsoft@Microsoft.com) (gcc version 5.4.0 (GCC) ) #1237-Microsoft Sat Sep 11 14:32:00 PST 2021
+--509-- 
+--509-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--509-- Page sizes: currently 4096, max supported 4096
+--509-- Valgrind library directory: /usr/lib/x86_64-linux-gnu/valgrind
+--509-- Reading syms from /home/suhana786/SuhaCGWorkSpace/Assignments/Nalanda/C_Basic_assign/bin/3e
+--509-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.31.so
+--509--   Considering /usr/lib/debug/.build-id/45/87364908de169dec62ffa538170118c1c3a078.debug ..
+--509--   .. build-id is valid
+--509-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/memcheck-amd64-linux
+--509--    object doesn't have a symbol table
+--509--    object doesn't have a dynamic symbol table
+--509-- Scheduler: using generic scheduler lock implementation.
+--509-- Reading suppressions file: /usr/lib/x86_64-linux-gnu/valgrind/default.supp
+==509== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-509-by-suhana786-on-???
+==509== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-509-by-suhana786-on-???
+==509== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-509-by-suhana786-on-???
+==509== 
+==509== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==509== don't want to do, unless you know exactly what you're doing,
+==509== or are doing some strange experiment):
+==509==   /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=509 ...command...
+==509== 
+==509== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==509==   /path/to/gdb ./bin/3e
+==509== and then give GDB the following command
+==509==   target remote | /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=509
+==509== --pid is optional if only one valgrind process is running
+==509== 
+==509== error calling PR_SET_PTRACER, vgdb might block
+--509-- REDIR: 0x4022e20 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c9ce2 (???)
+--509-- REDIR: 0x4022bf0 (ld-linux-x86-64.so.2:index) redirected to 0x580c9cfc (???)
+--509-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so
+--509--    object doesn't have a symbol table
+--509-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so
+--509--    object doesn't have a symbol table
+==509== WARNING: new redirection conflicts with existing -- ignoring it
+--509--     old: 0x04022e20 (strlen              ) R-> (0000.0) 0x580c9ce2 ???
+--509--     new: 0x04022e20 (strlen              ) R-> (2007.0) 0x0483f060 strlen
+--509-- REDIR: 0x401f600 (ld-linux-x86-64.so.2:strcmp) redirected to 0x483ffd0 (strcmp)
+--509-- REDIR: 0x4023380 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4843a20 (mempcpy)
+--509-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.31.so
+--509--   Considering /usr/lib/debug/.build-id/18/78e6b475720c7c51969e69ab2d276fae6d1dee.debug ..
+--509--   .. build-id is valid
+--509-- REDIR: 0x48f3480 (libc.so.6:memmove) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f2780 (libc.so.6:strncpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f37b0 (libc.so.6:strcasecmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f20a0 (libc.so.6:strcat) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f27e0 (libc.so.6:rindex) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f4c50 (libc.so.6:rawmemchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x490fce0 (libc.so.6:wmemchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x490f820 (libc.so.6:wcscmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f35e0 (libc.so.6:mempcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f3410 (libc.so.6:bcmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f2710 (libc.so.6:strncmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f2150 (libc.so.6:strcmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f3540 (libc.so.6:memset) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x490f7e0 (libc.so.6:wcschr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f2670 (libc.so.6:strnlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f2230 (libc.so.6:strcspn) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f3800 (libc.so.6:strncasecmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f21d0 (libc.so.6:strcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f3950 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x4910f50 (libc.so.6:wcsnlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x490f860 (libc.so.6:wcscpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f2820 (libc.so.6:strpbrk) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f2100 (libc.so.6:index) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f2630 (libc.so.6:strlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48fbbb0 (libc.so.6:memrchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f3850 (libc.so.6:strcasecmp_l) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f33d0 (libc.so.6:memchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x490f930 (libc.so.6:wcslen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f2ae0 (libc.so.6:strspn) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f3750 (libc.so.6:stpncpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f36f0 (libc.so.6:stpcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f4c90 (libc.so.6:strchrnul) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x48f38a0 (libc.so.6:strncasecmp_l) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--509-- REDIR: 0x49db500 (libc.so.6:__strrchr_avx2) redirected to 0x483ea10 (rindex)
+--509-- REDIR: 0x48eeb10 (libc.so.6:calloc) redirected to 0x483dce0 (calloc)
+--509-- REDIR: 0x49db310 (libc.so.6:__strchrnul_avx2) redirected to 0x4843540 (strchrnul)
+--509-- REDIR: 0x48ed0e0 (libc.so.6:malloc) redirected to 0x483b780 (malloc)
+--509-- REDIR: 0x49db6d0 (libc.so.6:__strlen_avx2) redirected to 0x483ef40 (strlen)
+==509== Invalid read of size 1
+==509==    at 0x483EF46: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==509==    by 0x48CBD14: __vfprintf_internal (vfprintf-internal.c:1688)
+==509==    by 0x48B4D3E: printf (printf.c:33)
+==509==    by 0x1097EB: main (3e.c:159)
+==509==  Address 0x4a48090 is 0 bytes after a block of size 0 alloc'd
+==509==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==509==    by 0x10955E: concatenate_servernames (3e.c:83)
+==509==    by 0x1097CF: main (3e.c:158)
+==509== 
+--509-- REDIR: 0x49de6c0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4843660 (mempcpy)
+--509-- REDIR: 0x48ed6d0 (libc.so.6:free) redirected to 0x483c9d0 (free)
+==509== 
+==509== HEAP SUMMARY:
+==509==     in use at exit: 0 bytes in 0 blocks
+==509==   total heap usage: 3 allocs, 3 frees, 4,097 bytes allocated
+==509== 
+==509== All heap blocks were freed -- no leaks are possible
+==509== 
+==509== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==509== 
+==509== 1 errors in context 1 of 1:
+==509== Invalid read of size 1
+==509==    at 0x483EF46: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==509==    by 0x48CBD14: __vfprintf_internal (vfprintf-internal.c:1688)
+==509==    by 0x48B4D3E: printf (printf.c:33)
+==509==    by 0x1097EB: main (3e.c:159)
+==509==  Address 0x4a48090 is 0 bytes after a block of size 0 alloc'd
+==509==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==509==    by 0x10955E: concatenate_servernames (3e.c:83)
+==509==    by 0x1097CF: main (3e.c:158)
+==509== 
+==509== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
