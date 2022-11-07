@@ -1,0 +1,49 @@
+
+
+data type:
+
+1. Premitive dt => int, char, float, double
+2. Userdefined dt => user is defining his/her own dt by using P dts => structures, enums, union
+3. Dedrived dt => arrays => bunch/collection of P dt/homogenous stored in a consigative mem add used for a particular purpose.
+
+
+modifiers => signed, unsigned, short, long
+
+d and b
+
+if, if else, else if ladder, switch
+
+d and l
+
+while, do while, for
+
+array 
+[] => binary unix operator
+
+operand[] => array
+
+dt arrayName[SIZE]; //dec
+
+arrayName[IndexValue] //using/executing
+
+
+string => collection of characters => with an NULL char at the end of the collection
+strlen, strstr, strcmp, strcpy
+
+seg fault signal 11
+
+functions 
+1. with input para
+2. without input para
+3. with rdatatype
+
+r_datatype funcName(args dt); //dec
+
+define
+
+r_datatype funcName(args dt with varName)
+{
+	sts...
+
+	return rdatatypeValue
+}
