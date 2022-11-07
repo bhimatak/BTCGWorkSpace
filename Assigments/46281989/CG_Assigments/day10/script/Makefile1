@@ -1,0 +1,21 @@
+SRC=src
+OBJ=obj
+BIN=bin
+INC=inc
+CC=gcc
+CFLAGS=-c -g -wall
+
+all: $(BIN)/assign3d
+
+$(BIN)/assign3d : $(OBJ)/assign3b.0
+	$(CC) -0 $(BIN)/assign3d $(OBJ)/assign3d.0
+
+$(OBJ)/assign3d.o: $(SRC)/assign3d.c
+	$(CC) $(CFLAGS) $(SRC)/assign3d.c -I $(INC)/
+	mv assign3b.o $(OBJ)/
+
+clean:
+	rm -f a.out *.0
+	rm -f $(OBJ)/+
+	rm -f $(OBJ)/*
+	@echo *Cleaning Done!*
