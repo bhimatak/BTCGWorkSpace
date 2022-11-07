@@ -23,6 +23,11 @@ struct employee
 };
 
 
+
+structure padding 
+
+
+
 struct Employee
 {
 	int eID;
