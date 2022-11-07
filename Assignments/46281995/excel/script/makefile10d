@@ -1,0 +1,21 @@
+CC = gcc
+
+SRC = src
+BIN = bin
+INC = inc
+OBJ = obj
+
+all: $(BIN)/app10d
+
+$(BIN)/app10d: $(OBJ)/Day10_3d.o
+	$(CC) -o $(BIN)/app10d $(OBJ)/Day10_3d.o
+
+$(OBJ)/Day10_3d.o: $(SRC)/Day10_3d.c
+	$(CC) -c $(SRC)/Day10_3d.c -I $(inc)/
+	mv Day10_3d.o $(OBJ)/
+
+clean:
+	rm -f a.out *.o
+	rm -f $(OBJ)/*
+	rm -f $(BIN)/*
+	@echo "Cleaning Done!"

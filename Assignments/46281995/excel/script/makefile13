@@ -1,0 +1,21 @@
+CC = gcc
+
+SRC = src
+BIN = bin
+OBJ = obj
+INC = inc
+
+all: $(BIN)/app13
+
+$(BIN)/app13: $(OBJ)/Day13.o
+	$(CC) -o $(BIN)/app13 $(OBJ)/Day13.o
+
+$(OBJ)/Day13.o: $(SRC)/Day13.c
+	$(CC) -C $(SRC)/Day13.c -I $(INC)/
+	mv Day13.o $(OBJ)/
+
+clean:
+	rm -f a.out *.o
+	rm -f $(OBJ)/*
+	rm -f $(BIN)/*
+	@echo "Cleaning Done!"
