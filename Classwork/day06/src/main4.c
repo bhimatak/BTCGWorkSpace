@@ -6,15 +6,27 @@
 
 int main()
 {
-	struct EmpStruct E[SIZE];
+	//struct EmpStruct E[SIZE];
+
+
 	struct EmpStruct *ePtr = NULL;
+	struct EmpStruct *head = NULL;
+
+	int *ptr;
+	void *ptr1;
+	char *cptr;
+
 	int it;
 	
-	int NoOfEmps = 3;
+	int NoOfEmps;
 
-	//EPTR should point to the BA of emp
-	printf("\nSize of the EmpStruct=%ld\n", sizeof(struct EmpStruct));
-	ePtr = E;
+	printf("\n\tEnter the No of Employee Required: ");
+	scanf("%d",&NoOfEmps);
+
+	
+	head = (struct EmpStruct *)malloc(NoOfEmps*sizeof(struct EmpStruct));
+
+	eptr = head; 
 
 	for(it =0;it<NoOfEmps;it++, ePtr++){
 
@@ -32,7 +44,7 @@ int main()
 		scanf("%d",&ePtr->ePhone);
 	}
 
-	ePtr = E; //rebasing to the BA of head of the array
+	ePtr = head; //rebasing to the BA of head of the array
 
 	for(it=0;it<NoOfEmps;it++, ePtr++){
 		printf("\n\t%d Employee Details, \n",(it+1));
