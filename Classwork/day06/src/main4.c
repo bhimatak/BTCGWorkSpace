@@ -12,6 +12,10 @@ int main()
 	struct EmpStruct *ePtr = NULL;
 	struct EmpStruct *head = NULL;
 
+	int *ptr;
+	void *ptr1;
+	char *cptr;
+
 	int it;
 	
 	int NoOfEmps;
@@ -19,10 +23,10 @@ int main()
 	printf("\n\tEnter the No of Employee Required: ");
 	scanf("%d",&NoOfEmps);
 
+	
+	head = (struct EmpStruct *)malloc(NoOfEmps*sizeof(struct EmpStruct));
 
-	ePtr = (struct EmpStruct *)malloc(NoOfEmps*sizeof(struct EmpStruct));
-
-	head = ePtr; 
+	eptr = head; 
 
 	for(it =0;it<NoOfEmps;it++, ePtr++){
 
