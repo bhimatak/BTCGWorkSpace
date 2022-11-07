@@ -7,30 +7,32 @@
 int main()
 {
 	struct EmpStruct E[SIZE];
-	struct EmpStruct *ePtr;
+	struct EmpStruct *ePtr = NULL;
 	int it;
-	int iv;
+	
 	int NoOfEmps = 3;
 
 	//EPTR should point to the BA of emp
 	printf("\nSize of the EmpStruct=%ld\n", sizeof(struct EmpStruct));
 	ePtr = E;
 
-	for(it =0,iv=0 ;it<NoOfEmps;it++, ePtr++){
+	for(it =0;it<NoOfEmps;it++, ePtr++){
 
-		printf("\n\tEnter %d Employee Details, \n",(iv+1));
+		printf("\n\tEnter %d Employee Details, \n",(it+1));
 		printf("\n\tID: ");
-		scanf("%d", &E[iv].eID);
+		scanf("%d", &ePtr->eID);
 		printf("\n\tName: ");
-		scanf("%s", E[iv].eName);
+		scanf("%s", ePtr->eName);
 		getc(stdin);
 		printf("\n\tGender (M/F/O): ");
-		scanf("%c", &E[iv].eGender);
+		scanf("%c", &ePtr->eGender);
 		printf("\n\tAddress: ");
-		scanf("%s", E[iv].eAddr);
+		scanf("%s", ePtr->eAddr);
 		printf("\n\tPhone Number: ");
-		scanf("%d",&E[iv].ePhone);
+		scanf("%d",&ePtr->ePhone);
 	}
+
+	ePtr = E; //rebasing to the BA of head of the array
 
 	for(it=0;it<NoOfEmps;it++, ePtr++){
 		printf("\n\t%d Employee Details, \n",(it+1));
@@ -44,6 +46,8 @@ int main()
 		printf("%s", ePtr->eAddr);
 		printf("\n\tPhone Number: ");
 		printf("%d",ePtr->ePhone);
+
+
 	}
 
 	printf("\n\n");
