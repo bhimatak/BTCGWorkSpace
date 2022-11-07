@@ -1,0 +1,17 @@
+#include <stdio.h>
+#int main()
+{
+    int iv;
+    int num;
+    int arr[5]={1,2,3,4,5};
+    int *ptr=Null;
+    printf("Enter a number:");
+    scanf("%d",&num);
+    for(iv=1;iv<=10;iv++,ptr++)
+         {
+		ptr=&arr[iv];
+		printf("%d\n",*ptr);
+	}
+    return 0;
+}
+    
