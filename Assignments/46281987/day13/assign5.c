@@ -4,9 +4,9 @@
  * *
  * *  DESCRIPTION  : This file contents an application of command line arguments
  * *
- * *  DATE      NAME    REFERENCE          REASON
+ * *  DATE     		NAME    	REFERENCE          REASON
  * *
- * *  1-JUN-10  Sibu    PRISM-3 C FG       Initial Creation.
+ * *  08-NOV-2022	ANNAYASHA	DAY013		Command Line Arguments
  * *
  * *  Copyright 2010, Aricent Technologies (Holdings) Ltd
  * *
