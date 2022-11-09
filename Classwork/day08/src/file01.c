@@ -4,6 +4,12 @@ int main()
 {
 	FILE *fp;
 
+	// relative paths
+	//fp = fopen("test.txt", "r");
+	//fp = fopen("./data/test.txt", "r");
+	//fp = fopen("../data/test.txt", "r");
+
+	//absolute path
 	fp = fopen("/home/bhima/BTCGWorkSpace/Classwork/day08/data/test.txt", "r");
 
 	if(fp == NULL)
