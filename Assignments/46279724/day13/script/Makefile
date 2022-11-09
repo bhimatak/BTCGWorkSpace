@@ -9,14 +9,16 @@ CFLAGES = -c -g -Wall
 LDFLAGES = -O
 IFLAGS = -I $(INC)
 
-a.out:$(OBJ)/server.o
- $(CC) $(LDFLAGS) $(BIN)/a.out $?
+server:$(OBJ)/server.o
+ $(CC) $(LDFLAGS) $(BIN)/server $?
 $(OBJ)/server.o:$(SRC)/server.c
  $(CC) $(CFLAGS) $(SRC)/server.c $(IFLAGS)
  mv server.o $(OBJ)/
 
+
 clean:
-          rm -f a.out *.o
+
+          rm -f server *.o
           rm -f $(OBJ)/*
           rm -f(BIN)/*
-          @echo "cleaning is done!"
+         @echo "cleaning is done!"

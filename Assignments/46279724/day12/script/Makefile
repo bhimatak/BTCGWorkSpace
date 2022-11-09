@@ -11,8 +11,8 @@ LDFLAGS = -o
 
 IFLAGES = -I $(INC)
 
-array: $(OBJ)/display.o $(OBJ)/mainARRAY.o
-   $(CC) $(LDFLAGS) $(BIN)/array $?
+main: $(OBJ)/display.o $(OBJ)/mainARRAY.o
+   $(CC) $(LDFLAGS) $(BIN)/main $?
 $(OBJ)/display.o: $(SRC)/display.c
    $(CC) $(CFLAGS) $(SRC)/display.c $(IFLAGs)
    mv display.o $(OBJ)/
@@ -21,9 +21,10 @@ $(OBJ)/mainARRAY.o: $(SRC)/mainARRAY.c
    mv mainARRAY.o $(OBJ)/
 
 clean:
-         rm -f a.out *.o
-         rm -f $(OBJ)/*
-         rm -f $(BIN)/*
-         @echo "cleaning is Done!"
+        
+          rm -f main *.o
+          rm -f $(OBJ)/*
+          rm -f $(BIN)/*
+          @echo "cleaning is Done!"
 
 
