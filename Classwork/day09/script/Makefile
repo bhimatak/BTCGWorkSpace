@@ -28,8 +28,8 @@ app3: $(OBJ)/file03.o
 app4: $(OBJ)/file04.o
 	$(CC) $(LDFLAGS) $(BIN)/app4 $(OBJ)/file04.o
 
-app5: $(OBJ)/main5.o $(OBJ)/EmpStruct.o
-	$(CC) $(LDFLAGS) $(BIN)/app5 $(OBJ)/main5.o $(OBJ)/EmpStruct.o
+app5: $(OBJ)/file05.o
+	$(CC) $(LDFLAGS) $(BIN)/app5 $(OBJ)/file05.o
 
 $(OBJ)/file01.o: $(SRC)/file01.c
 	$(CC) $(CFLAGS) $(SRC)/file01.c $(IFLAGS)
@@ -47,13 +47,10 @@ $(OBJ)/file04.o: $(SRC)/file04.c
 	$(CC) $(CFLAGS) $(SRC)/file04.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
-$(OBJ)/main5.o: $(SRC)/main5.c
-	$(CC) $(CFLAGS) $(SRC)/main5.c $(IFLAGS)
+$(OBJ)/file05.o: $(SRC)/file05.c
+	$(CC) $(CFLAGS) $(SRC)/file05.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
-$(OBJ)/EmpStruct.o: $(SRC)/EmpStruct.c
-	$(CC) $(CFLAGS) $(SRC)/EmpStruct.c $(IFLAGS)
-	mv *.o $(OBJ)/
 
 
 clean:
