@@ -40,12 +40,12 @@ void getEmpDetails(struct EmpStruct E[], int n)
 	}
 }
 
-int findEmpDetails(struct EmpStruct *E, char *Name, int N)
+int findEmpDetails(struct EmpStruct *E, char *Name)
 {
-	//int N1 = sizeof(E)/sizeof(E[0]);
+	size_t n = malloc_usable_size(E)/sizeof(*E); 
 	int iv, flag = 0;
-
-	for(iv=0;iv<N;iv++)
+	printf("\n\tN=%ld",n);
+	for(iv=0;iv<n;iv++)
 	{
 		if(strcmp(E[iv].eName, Name)==0)
 		{
