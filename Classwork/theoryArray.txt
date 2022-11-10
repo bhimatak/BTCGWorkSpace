@@ -1,0 +1,13 @@
+1. single
+2. double
+3. multi
+
+
+4 arrays =>
+
+1. static array => size of the array is know prior to the compliation
+2. dynamic array => size of the array is know at run time
+3. stretchable array => size of the array is changed at run time -> strectched/shrinked => realloc 
+4. mutable array => size of the array is know between link and execution time
+
+

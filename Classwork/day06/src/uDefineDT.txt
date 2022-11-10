@@ -1,0 +1,69 @@
+
+structure, unions, enums
+
+keywords -> struct, union, enum
+
+
+declare
+
+struct structName
+{
+	collection of diff P dts	
+};
+
+ex:
+
+struct employee
+{
+	int empid;       ==members of the structure
+	int ephone;     ==members of the structure
+	char ename[50];==members of the structure
+	char eaddr[200];==members of the structure
+	char egender;==members of the structure
+};
+
+
+
+structure padding 
+
+
+
+struct Employee
+{
+	int eID;
+	int ePhone;
+	char eName[50];
+	char eAddr[200];
+	char eGender;
+
+};
+
+to use the members of the struct
+we use the following operator/symbols
+
+1)  . -> dot operator => normal decalaration
+2) -> arrow operator => if the structure variable is defined as pointer
+
+
+
+//dec of variable of UDT
+struct Employee Emp1, Emp2;
+
+Emp1.eID = 101;
+Emp1.ePhone = 9999999;
+strcpy(Emp1.eName,"Bhima");
+strcpy(Emp1.eAddr,"Karnataka");
+Emp1.eGender = 'M';
+
+
+printf("\n%d", Emp1.eID);
+printf("\n%s", Emp.eName);
+
+
+
+int a;
+
+a = 10;
+
+
+

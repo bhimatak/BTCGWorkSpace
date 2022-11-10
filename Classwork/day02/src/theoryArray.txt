@@ -32,6 +32,12 @@ MathsMarks[2] = 30;
 MathsMarks[3] = 40;
 
 
+int a=10, b=20, c=30;
 
+
+
+sizeof(int)=>2 bytes
+
+200
 
 

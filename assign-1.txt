@@ -1,0 +1,7 @@
+total 36
+-rwxrwxr-x 1 bhima bhima 17520 Nov  2 14:26 a.out
+-rw-rw-r-- 1 bhima bhima     0 Nov  2 17:28 assign-1.txt
+drwxrwxr-x 3 bhima bhima  4096 Nov  2 17:15 Assignments
+drwxrwxr-x 5 bhima bhima  4096 Nov  2 09:19 Classwork
+-rwxrwxr-x 1 bhima bhima    98 Sep 15 16:41 gitCmds.sh
+-rw-rw-r-- 1 bhima bhima    15 Oct 31 11:45 README.md
