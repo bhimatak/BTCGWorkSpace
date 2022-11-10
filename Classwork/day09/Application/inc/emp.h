@@ -17,9 +17,12 @@ int addEmpDetails(EMP *);
 void dispEmpAll(EMP *, int, int);
 int updateEmpName(EMP *, char *);
 int updateEmpPhone(EMP *, int);
+int updateEmpSalary(EMP *, int);
 int findEmpID(EMP *, int, int);
 int findEmpName(EMP *, int, char *);
 int delEmpID(EMP *, int, int);
+void dispEmpIDs(EMP *, int);
+
 
 
 #endif
