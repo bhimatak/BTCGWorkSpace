@@ -42,6 +42,21 @@ void dispEmpAll(EMP *e, int Cap, int flag)
 	}
 }
 
+void dispEmpIDs(EMP *e, int Cap)
+{
+	int i;
+	printf("\n\t=========Employee IDs are=========\n");
+	if(e == NULL){
+		printf("\n\tError");
+		return;
+	}
+	for(i=0;i<Cap;i++,e++)
+	{
+		if(e->eActive == '1')
+			printf("\n\tID: %d", e->eID);
+	}
+}
+
 
 int findEmpID(EMP *e, int Cap, int _id)
 {
@@ -69,7 +84,8 @@ int findEmpID(EMP *e, int Cap, int _id)
 int findEmpName(EMP *e, int Cap, char *_name)
 {
 	int i, flag=0;
-	
+	if((e == NULL) || (_name == NULL))
+		return -1;
 	for(i=0;i<Cap;i++,e++)
 	{
 		if(e->eActive == '1'){
@@ -103,6 +119,16 @@ int delEmpID(EMP *e, int Cap, int _id)
 		return 0;
 	}
 	e[pos].eActive = '0'; // if found make it inactive
+
+	return 1;
+}
+
+
+int updateEmpName(EMP *e, char *_name)
+{
+	if((e==NULL) || (_name==NULL))
+		return -1;
+	strcpy(e->eName, _name);
 
 	return 1;
 }

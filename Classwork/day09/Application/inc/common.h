@@ -14,4 +14,6 @@ void dispWelcome();
 
 int dispMainMenu();
 
+int dispUpdateMenu();
+
 #endif

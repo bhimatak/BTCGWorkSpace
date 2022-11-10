@@ -26,3 +26,17 @@ int dispMainMenu()
 
 	return ch;
 }
+
+int dispUpdateMenu()
+{
+	int ch;
+	printf("\n\tPress,");
+	printf("\n\t1. Update Employee Name");
+	printf("\n\t2. Update Employee Phone");
+	printf("\n\t3. Update Employee Salary");
+	printf("\n\t4. Exit");
+	printf("\n\tChoice: ");
+	scanf("%d", &ch);
+
+	return ch;
+}
