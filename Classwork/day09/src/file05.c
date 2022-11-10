@@ -5,7 +5,7 @@ int main(int argc, char*argv[])
 	FILE *fp1, *fp2;
 	char fileName1[256];
 	char fileName2[256];
-	char ch;
+	int ret=0;
 	char buff[1024] = {'\0', };
 
 	if(argc != 3)
@@ -33,11 +33,19 @@ int main(int argc, char*argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	
-	
+	fclose(fp1);
+	ret = fseek(fp1, 810L, SEEK_SET);
+	if(ret < 0){
+		perror("fseek() ");
+		exit(EXIT_FAILURE);
+	}
+
+	printf("\nThe File Pointer is at: %d location\tret=%d", ftell(fp1), ret);
 	while(fgets(buff, 256, fp1)){
 		//fprintf(fp2,"%s",buff);
 		fputs(buff, fp2);
+		if(ftell(fp1) >= 300)
+			break;
 	}
 	
 	printf("\nCopied %s to %s", fileName1, fileName2);
