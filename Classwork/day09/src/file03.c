@@ -44,8 +44,12 @@ int main(int argc, char*argv[])
 	printf("\nFile is Present\n");
 
 	ret = fscanf(fp,"%s%d",E.eName, &E.eID);
+	if(ret != 2){
+		printf("\nNot Successfully scanned\n");
+		exit(EXIT_FAILURE);
+	}
 
-	printf("\nRet = %d", ret);
+	
 	fprintf(stdout, "\nEmp Name: %s\nEmp ID: %d\n", E.eName, E.eID);
 
 	
