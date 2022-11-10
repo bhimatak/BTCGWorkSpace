@@ -14,13 +14,13 @@ int main(int argc, char*argv[])
 
 	char cwd[1024];
 	char buff[1024] = {'\0', };
+	char *tokens;
 	int ret=0;
 
 	EMP E;
 	
 	
-	//E.eID = atoi(argv[1]);
-	//strcpy(E.eName, argv[2]);
+	
 
 	
 
@@ -58,7 +58,17 @@ int main(int argc, char*argv[])
 		perror("fgets() ");
 
 	printf("buff: %s\n",buff);
+	tokens = strtok(buff, "|");
+	//printf("\n%s\n",tokens);
+	strcpy(E.eName, tokens);
+	tokens = strtok(NULL, "|");
+	//printf("\n%s\n",tokens);
+	E.eID = atoi(tokens);
 
+	fprintf(stdout, "\nEmp Name: %s\nEmp ID: %d\n", E.eName, E.eID);
+
+	//
+	/*
 	if(fgets(buff, 100, fp) == NULL)
 		perror("fgets() ");
 
@@ -68,7 +78,7 @@ int main(int argc, char*argv[])
 		perror("fgets() ");
 
 	printf("buff: %s\n",buff);
-
+	*/
 	fclose(fp);
 
 
