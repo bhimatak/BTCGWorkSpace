@@ -13,7 +13,7 @@ int dispMainMenu()
 	int ch;
 	dispWelcome();
 	printf("\n\tPress,");
-	printf("\n\t1. Add Employees");
+	printf("\n\t1. Add Employee");
 	printf("\n\t2. Update Employee");
 	printf("\n\t3. Find Employee by ID");
 	printf("\n\t4. Find Employee by Name");

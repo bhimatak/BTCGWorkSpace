@@ -23,6 +23,9 @@ int findEmpName(EMP *, int, char *);
 int delEmpID(EMP *);
 void dispEmpIDs(EMP *, int);
 
+int writeToFile(EMP *, char *);
+int readDBAll(EMP *, char *, int );
+int countRecs(char *, int *);
 
 
 #endif

@@ -8,6 +8,7 @@
 #include <unistd.h>
 
 #define BUFF 256
+#define MAXBUFF 1024
 
 
 void dispWelcome();
