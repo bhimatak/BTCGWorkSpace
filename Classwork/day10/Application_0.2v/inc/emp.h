@@ -26,6 +26,6 @@ void dispEmpIDs(EMP *, int);
 int writeToFile(EMP *, char *);
 int readDBAll(EMP *, char *, int );
 int countRecs(char *, int *);
-
+int updateEmpRecs(EMP *, char *, int);
 
 #endif
