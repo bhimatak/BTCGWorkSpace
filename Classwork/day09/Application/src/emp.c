@@ -105,12 +105,9 @@ int findEmpName(EMP *e, int Cap, char *_name)
 }
 
 
-int delEmpID(EMP *e, int Cap, int _id)
+/*int delEmpID(EMP *e, int Cap, int _id)
 {
-	/*
-	need the position of the Emp to be deleted
-	*/
-
+	
 	int pos = findEmpID(e, Cap, _id);
 
 	if(pos == -1)
@@ -122,13 +119,44 @@ int delEmpID(EMP *e, int Cap, int _id)
 
 	return 1;
 }
-
+*/
 
 int updateEmpName(EMP *e, char *_name)
 {
 	if((e==NULL) || (_name==NULL))
 		return -1;
 	strcpy(e->eName, _name);
+
+	return 1;
+}
+
+int updateEmpPhone(EMP *e, int _phone)
+{
+	if(e==NULL)
+		return -1;
+	if(_phone <=0)
+		return -1;
+	e->ePhone = _phone;
+
+	return 1;
+}
+
+int updateEmpSalary(EMP *e, float _sal)
+{
+	if(e==NULL)
+		return -1;
+	if(_sal <=0)
+		_sal = 0;
+	e->eSalary = _sal;
+
+	return 1;
+}
+
+int delEmpID(EMP *e)
+{
+	if(e==NULL)
+		return -1;
+	e->eActive = '0';
 
 	return 1;
 }
