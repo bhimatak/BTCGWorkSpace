@@ -447,6 +447,7 @@ int writeData(EMP *e, char *fileName, int NoOfEmps)
 		fputs(buffer, fp);
 	}	
 
+	
 	fclose(fp);
 	return 1;
 }
