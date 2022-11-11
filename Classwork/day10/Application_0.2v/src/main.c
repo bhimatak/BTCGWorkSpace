@@ -7,7 +7,7 @@ int main()
 	EMP *e = NULL;
 	EMP *head = NULL;
 	
-	int NoOfEmps=0, i, _id;
+	int NoOfEmps=0,_id;
 	int pos = 0;
 	//int retValue = 0;
 	int choice = 0;
@@ -51,6 +51,22 @@ int main()
 				break;
 
 			case 2:
+				countRecs(fileName, &NoOfEmps);
+				
+				head = (EMP *)malloc(sizeof(EMP)*NoOfEmps);
+				if(head == NULL)
+				{
+					perror("malloc() ");
+					break;
+				}
+				e = head;
+				if(readDBAll(e, fileName, NoOfEmps)<=0)
+				{
+					printf("\n\tError in readDBAll\n");
+					break;
+				}
+				e = head;
+
 				choice = dispUpdateMenu();
 				switch(choice)
 				{
@@ -72,6 +88,7 @@ int main()
 							else
 							{
 								printf("\n\tUpdated Details of Employee\n");
+								updateEmpRecs(&e[pos], fileName, NoOfEmps);
 								dispEmpAll(&e[pos], 1, 1);
 							}
 						}
@@ -95,6 +112,7 @@ int main()
 							else
 							{
 								printf("\n\tUpdated Details of Employee\n");
+								updateEmpRecs(&e[pos], fileName, NoOfEmps);
 								dispEmpAll(&e[pos], 1, 1);
 							}
 						}
@@ -118,6 +136,7 @@ int main()
 							else
 							{
 								printf("\n\tUpdated Details of Employee\n");
+								updateEmpRecs(&e[pos], fileName, NoOfEmps);
 								dispEmpAll(&e[pos], 1, 1);
 							}
 						}
@@ -131,6 +150,22 @@ int main()
 				choice = 0;
 				break;
 			case 3:
+				countRecs(fileName, &NoOfEmps);
+				
+				head = (EMP *)malloc(sizeof(EMP)*NoOfEmps);
+				if(head == NULL)
+				{
+					perror("malloc() ");
+					break;
+				}
+				e = head;
+				if(readDBAll(e, fileName, NoOfEmps)<=0)
+				{
+					printf("\n\tError in readDBAll\n");
+					break;
+				}
+				e = head;
+
 				printf("\n\tEnter the Employee ID: ");
 				scanf("%d",&_id);
 				pos = findEmpID(e,NoOfEmps,_id);
@@ -143,6 +178,22 @@ int main()
 				}
 				break;
 			case 4:
+				countRecs(fileName, &NoOfEmps);
+				
+				head = (EMP *)malloc(sizeof(EMP)*NoOfEmps);
+				if(head == NULL)
+				{
+					perror("malloc() ");
+					break;
+				}
+				e = head;
+				if(readDBAll(e, fileName, NoOfEmps)<=0)
+				{
+					printf("\n\tError in readDBAll\n");
+					break;
+				}
+				e = head;
+
 				printf("\n\tEnter the Employee Name: ");
 				scanf("%s",_name);
 				pos = findEmpName(e,NoOfEmps,_name);
@@ -155,6 +206,7 @@ int main()
 				}
 				break;
 			case 5:
+
 				printf("\n\tEnter the Employee ID(TBD): ");
 				scanf("%d",&_id);
 				pos = findEmpID(e,NoOfEmps,_id);
@@ -169,22 +221,50 @@ int main()
 					else
 					{
 						printf("\n\tEmployee account is now inactive/deleted\n");
+						updateEmpRecs(&e[pos], fileName, NoOfEmps);
 						dispEmpAll(&e[0], NoOfEmps, 0);
 					}
 				}
 				break;
 			case 6:
 				e = NULL;
+
 				countRecs(fileName, &NoOfEmps);
-				head = (EMP *)malloc(sizeof(EMP)*NoOfEmps);
-				e = head;
-				readDBAll(e, fileName, NoOfEmps);
 				
+				head = (EMP *)malloc(sizeof(EMP)*NoOfEmps);
+				if(head == NULL)
+				{
+					perror("malloc() ");
+					break;
+				}
+				e = head;
+				if(readDBAll(e, fileName, NoOfEmps)<=0)
+				{
+					printf("\n\tError in readDBAll\n");
+					break;
+				}
+				e = head;
 				dispEmpAll(e, NoOfEmps, 0);
 				//pause();
 				sleep(2);
 				break;
 			case 7:
+				countRecs(fileName, &NoOfEmps);
+				
+				head = (EMP *)malloc(sizeof(EMP)*NoOfEmps);
+				if(head == NULL)
+				{
+					perror("malloc() ");
+					break;
+				}
+				e = head;
+				if(readDBAll(e, fileName, NoOfEmps)<=0)
+				{
+					printf("\n\tError in readDBAll\n");
+					break;
+				}
+				e = head;
+
 				printf("\n\tEnter the Employee ID: ");
 				scanf("%d",&_id);
 				pos = findEmpID(e,NoOfEmps,_id);
