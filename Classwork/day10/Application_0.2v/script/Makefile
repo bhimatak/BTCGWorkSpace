@@ -1,6 +1,6 @@
 CC = gcc
 
-ProjDir = ~/BTCGWorkSpace/Classwork/day09/Application
+ProjDir = ~/BTCGWorkSpace/Classwork/day10/Application_0.2v
 
 INC = $(ProjDir)/inc
 SRC = $(ProjDir)/src
