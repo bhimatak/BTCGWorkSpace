@@ -161,6 +161,76 @@ int delEmpID(EMP *e)
 	return 1;
 }
 
+int updateEmpRecs(EMP *tmpEmp, char *fileName, int NoOfEmps)
+{
+	FILE *fp = NULL;
+	char buff[MAXBUFF];
+	char *tokens;
+	EMP e;
+	int i, bufflen=0, flag=0;
+
+	fp = fopen(fileName, "r+");
+	
+	if(fp == NULL)
+	{
+		perror("fopen ");
+		return 0;
+	}
+
+	if(fseek(fp,0L, SEEK_SET)< 0)
+	{
+		perror("fseek() ");
+		return 0;
+	}
+		
+	for(i=0;i<NoOfEmps;i++)
+	{
+		memset(buff,'\0', MAXBUFF);
+		tokens = NULL;
+		fgets(buff, MAXBUFF, fp);
+		bufflen = strlen(buff);
+		tokens = strtok(buff, "|");
+		e.eID = atoi(tokens);
+		tokens = strtok(NULL, "|");
+		e.eActive = tokens[0];
+		tokens = strtok(NULL, "|");
+		strcpy(e.eName, tokens);
+		tokens = strtok(NULL, "|");
+		e.eGender = tokens[0];
+		tokens = strtok(NULL, "|");
+		e.ePhone = atoi(tokens);
+		tokens = strtok(NULL, "|");
+		e.eSalary = atoi(tokens);
+		
+		if(e.eID == tmpEmp->eID)
+		{
+			flag = 1;
+			break;
+		}
+		
+	}
+
+	if(flag == 1)
+	{
+		fseek(fp,-1*(bufflen),SEEK_CUR);
+		
+		if(fprintf(fp,"%d|", tmpEmp->eID)<=0)
+			return 0;
+		fprintf(fp, "%c|", tmpEmp->eActive);
+		fprintf(fp, "%s|", tmpEmp->eName);
+		fprintf(fp,"%c|", tmpEmp->eGender);
+		fprintf(fp,"%d|", tmpEmp->ePhone);
+		fprintf(fp,"%f",tmpEmp->eSalary);
+		fprintf(fp,"\n");
+		//fputs((char*)tmpEmp, sizeof(tmpEmp), fp);
+
+	}
+
+	
+	fclose(fp);
+	return 1;
+}
+
 /*
 int writeToFile(EMP *e, FILE *fp)
 {
@@ -208,6 +278,7 @@ int writeToFile(EMP *e, char *fileName)
 
 	if(fprintf(fp,"%d|", e->eID)<=0)
 		return 0;
+	fprintf(fp, "%c|", e->eActive);
 	fprintf(fp, "%s|", e->eName);
 	fprintf(fp,"%c|", e->eGender);
 	fprintf(fp,"%d|", e->ePhone);
@@ -257,7 +328,7 @@ int readDBAll(EMP *e, char *fileName, int NoOfEmps)
 	FILE *fp = NULL;
 	char buff[MAXBUFF];
 	char *tokens;
-	int count = 0, i;
+	int i;
 
 	fp = fopen(fileName, "r");
 	
@@ -273,22 +344,26 @@ int readDBAll(EMP *e, char *fileName, int NoOfEmps)
 		return 0;
 	}
 		
-	for(i=0;i<count;i++)
+	for(i=0;i<NoOfEmps;i++)
 	{
 		memset(buff,'\0', MAXBUFF);
 		tokens = NULL;
 		fgets(buff, MAXBUFF, fp);
+		
 		tokens = strtok(buff, "|");
 		e[i].eID = atoi(tokens);
-		tokens = strtok(buff, "|");
+		tokens = strtok(NULL, "|");
+		e[i].eActive = tokens[0];
+		tokens = strtok(NULL, "|");
 		strcpy(e[i].eName, tokens);
-		tokens = strtok(buff, "|");
+		tokens = strtok(NULL, "|");
 		e[i].eGender = tokens[0];
-		tokens = strtok(buff, "|");
+		tokens = strtok(NULL, "|");
 		e[i].ePhone = atoi(tokens);
-		tokens = strtok(buff, "|");
+		tokens = strtok(NULL, "|");
 		e[i].eSalary = atoi(tokens);
-	
+		
+		
 	}
 
 	
