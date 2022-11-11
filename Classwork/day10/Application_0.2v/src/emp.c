@@ -160,3 +160,138 @@ int delEmpID(EMP *e)
 
 	return 1;
 }
+
+/*
+int writeToFile(EMP *e, FILE *fp)
+{
+	if (e == NULL)
+		return 0;
+
+	if(fseek(fp,0L, SEEK_END)< 0)
+	{
+		perror("fseek() ");
+		return 0;
+	}
+
+	if(fprintf(fp,"%d|", e->eID)<=0)
+		return 0;
+	fprintf(fp, "%s|", e->eName);
+	fprintf(fp,"%c|", e->eGender);
+	fprintf(fp,"%d|", e->ePhone);
+	fprintf(fp,"%f\n",e->eSalary);
+
+	return 1;
+}
+
+*/
+
+int writeToFile(EMP *e, char *fileName)
+{
+	FILE *fp = NULL;
+
+	fp = fopen(fileName, "r+");
+	
+	if(fp == NULL)
+	{
+		perror("fopen ");
+		return 0;
+	}
+
+	if (e == NULL)
+		return 0;
+	
+	if(fseek(fp,0L, SEEK_END)< 0)
+	{
+		perror("fseek() ");
+		return 0;
+	}
+
+	if(fprintf(fp,"%d|", e->eID)<=0)
+		return 0;
+	fprintf(fp, "%s|", e->eName);
+	fprintf(fp,"%c|", e->eGender);
+	fprintf(fp,"%d|", e->ePhone);
+	fprintf(fp,"%f\n",e->eSalary);
+
+	fclose(fp);
+	return 1;
+}
+
+
+int countRecs(char *fileName, int *NoOfEmps)
+{
+	FILE *fp = NULL;
+	char buff[MAXBUFF];
+	
+	int count = 0;
+
+	fp = fopen(fileName, "r");
+	
+	if(fp == NULL)
+	{
+		perror("fopen ");
+		return 0;
+	}
+
+	if(fseek(fp,0L, SEEK_SET)< 0)
+	{
+		perror("fseek() ");
+		return 0;
+	}
+	
+	while(fgets(buff, MAXBUFF, fp))
+	{
+		count++;
+	}
+	*NoOfEmps = count;
+
+	
+	fclose(fp);
+	return 1;
+}
+
+
+
+int readDBAll(EMP *e, char *fileName, int NoOfEmps)
+{
+	FILE *fp = NULL;
+	char buff[MAXBUFF];
+	char *tokens;
+	int count = 0, i;
+
+	fp = fopen(fileName, "r");
+	
+	if(fp == NULL)
+	{
+		perror("fopen ");
+		return 0;
+	}
+
+	if(fseek(fp,0L, SEEK_SET)< 0)
+	{
+		perror("fseek() ");
+		return 0;
+	}
+		
+	for(i=0;i<count;i++)
+	{
+		memset(buff,'\0', MAXBUFF);
+		tokens = NULL;
+		fgets(buff, MAXBUFF, fp);
+		tokens = strtok(buff, "|");
+		e[i].eID = atoi(tokens);
+		tokens = strtok(buff, "|");
+		strcpy(e[i].eName, tokens);
+		tokens = strtok(buff, "|");
+		e[i].eGender = tokens[0];
+		tokens = strtok(buff, "|");
+		e[i].ePhone = atoi(tokens);
+		tokens = strtok(buff, "|");
+		e[i].eSalary = atoi(tokens);
+	
+	}
+
+	
+	fclose(fp);
+	return 1;
+}

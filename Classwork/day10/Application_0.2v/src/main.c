@@ -14,6 +14,20 @@ int main()
 	char _name[BUFF] = {'\0', };
 	int _phone = 0;
 	float _sal = 0.0;
+	
+	char fileName[1024];
+	char cwd[1024];
+
+	if (getcwd(cwd, sizeof(cwd)) == NULL) {
+       perror("getcwd() error");
+       return 1;
+   	}
+	
+
+	//absolute path
+	strcpy(fileName, cwd);
+	strcat(fileName, "/data/EMPDB.txt");
+	
 
 	while(1){
 		e = head;
@@ -24,13 +38,16 @@ int main()
 		switch(choice)
 		{
 			case 1:
-				printf("\n\tEnter the Number of Employees: ");
-				scanf("%d",&NoOfEmps);
-				head = (EMP *)malloc(NoOfEmps*sizeof(EMP));
-				e = head;
-				for(i=0;i<NoOfEmps;i++,e++)
-					addEmpDetails(e);
-				e = head;
+				
+				e = (EMP *)malloc(1*sizeof(EMP));
+				
+				addEmpDetails(e);
+				if(writeToFile(e,fileName) == 0)
+				{
+					printf("\n\tUnable to write in DB\n");
+					break;
+				}
+				
 				break;
 
 			case 2:
@@ -157,6 +174,12 @@ int main()
 				}
 				break;
 			case 6:
+				e = NULL;
+				countRecs(fileName, &NoOfEmps);
+				head = (EMP *)malloc(sizeof(EMP)*NoOfEmps);
+				e = head;
+				readDBAll(e, fileName, NoOfEmps);
+				
 				dispEmpAll(e, NoOfEmps, 0);
 				//pause();
 				sleep(2);
@@ -180,7 +203,7 @@ int main()
 		}
 	}
 
-	
+	free(head);
 	printf("\n\n");
 
 	return 0;
