@@ -1,9 +1,11 @@
 CC = gcc
 
-INC = ../inc
-SRC = ../src
-OBJ = ../obj
-BIN = ../bin
+ProjDir = ~/BTCGWorkSpace/Classwork/day08
+
+INC = $(ProjDir)/inc
+SRC = $(ProjDir)/src
+OBJ = $(ProjDir)/obj
+BIN = $(ProjDir)/bin
 
 CFLAGS = -c -g -Wall
 
