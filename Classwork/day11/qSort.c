@@ -54,6 +54,8 @@ void quickSort(int arr[], int firstIndex, int lastIndex)
 
 		while(index1 < index2)
 		{
+			// the below while loops will find the position of 
+			// pivot value where it should be palced(i.e its position/index value)
 			while((arr[index1] <= arr[pivotIndex]) && (index1 < lastIndex))
 			{
 				index1++;
