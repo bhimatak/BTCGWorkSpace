@@ -14,6 +14,7 @@ void dispList(LList *);
 
 int updateList(LList*, int, int);
 
+int sortListA(LList *);
 
 
 int main()
@@ -56,6 +57,7 @@ int main()
 	}
 	
 	dispList(head);
+	/* search and update */
 	printf("\nEnter the value in the list to be updated: ");
 	scanf("%d",&val);
 	printf("\nEnter the value to be updated: ");
@@ -66,6 +68,13 @@ int main()
 	}
 	else
 		printf("\nDidn't find the %d value in the list\n", val);
+	/* end of search and update */
+
+	// sort the LList in ascending order
+	sortListA(head);
+	dispList(head);
+
+
 	
 	printf("\n\n");
 	return 0;
@@ -98,7 +107,7 @@ int updateList(LList *head, int findValue, int repValue)
 		head = head->next;
 
 	}
-	
+
 	if(flag == 1)
 		return 1;
 
