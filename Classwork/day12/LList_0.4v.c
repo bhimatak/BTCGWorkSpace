@@ -15,6 +15,7 @@ void dispList(LList *);
 int updateList(LList*, int, int);
 
 int sortListA(LList *);
+int revListA(LList *); // rev the existing list
 
 
 int main()
@@ -58,6 +59,7 @@ int main()
 	
 	dispList(head);
 	/* search and update */
+	/*
 	printf("\nEnter the value in the list to be updated: ");
 	scanf("%d",&val);
 	printf("\nEnter the value to be updated: ");
@@ -68,6 +70,7 @@ int main()
 	}
 	else
 		printf("\nDidn't find the %d value in the list\n", val);
+	*/
 	/* end of search and update */
 
 	// sort the LList in ascending order
@@ -113,4 +116,34 @@ int updateList(LList *head, int findValue, int repValue)
 
 	return 0;
 
+}
+
+int sortListA(LList *head)
+{
+	int tempVal = 0;
+	LList *tempNode = NULL;
+
+
+	tempVal = 0;
+	tempNode = head->next;
+
+	while(head != NULL)
+	{
+		tempNode = head->next;
+		while(tempNode != NULL)
+		{
+			printf("\nCompare %d with %d\n",head->val, tempNode->val);
+			if(head->val > tempNode->val)
+			{
+				tempVal = tempNode->val;
+				tempNode->val = head->val;
+				head->val = tempVal;
+			}
+			tempNode = tempNode->next;
+		}
+		head = head->next;
+	}
+	
+
+	return 0;
 }
