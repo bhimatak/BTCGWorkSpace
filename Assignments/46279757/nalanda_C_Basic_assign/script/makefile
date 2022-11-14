@@ -27,6 +27,20 @@ $(OBJ)/day17.o: $(SRC)/day17.c
 			 $(CC) $(CFLAGS) $(SRC)/day17.c -I $(INC)/
 			 		  mv day17.o $(OBJ)/
 
+$(BIN)/assign5b: $(OBJ)/assign5b.o
+			$(CC) -o $(BIN)/assign5b $(OBJ)/assign5b.o
+
+$(OBJ)/assign5b.o: $(SRC)/assign5b.c
+			 $(CC) $(CFLAGS) $(SRC)/assign5b.c -I $(INC)/
+			 		 mv assign5b.o $(OBJ)/
+
+$(BIN)/assign4: $(OBJ)/assign4.o
+			 $(CC) -o $(BIN)/assign4 $(OBJ)/assign4.o
+
+$(OBJ)/assign4.o: $(SRC)/assign4.c
+			 $(CC) $(CFLAGS) $(SRC)/assign4.c -I $(INC)/
+			 		 mv assign4.o $(OBJ)/
+			 		
 clean:
 				rm -f a.out *.o
 				rm -f $(OBJ)/*

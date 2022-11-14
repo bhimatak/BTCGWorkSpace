@@ -9,7 +9,7 @@
  * * 
  * * 12-11-2022        vasanthi         new                     sorting technique
  * *
- * *@Copyright 2022 All Rights Reserved
+ * *Copyright 2022, Altran Group All Rights Reserved
  * *
  * *********************************************************************************************
  * *				STANDARD HEADER FILES
