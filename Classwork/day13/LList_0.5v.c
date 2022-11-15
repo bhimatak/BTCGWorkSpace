@@ -17,6 +17,8 @@ int updateList(LList*, int, int);
 int sortListA(LList *);
 int revListA(LList *); // rev the existing list
 
+int insertNewNode(LList *, LList *, int, int);
+
 
 int main()
 {
@@ -25,6 +27,7 @@ int main()
 	LList *head = NULL; // => always pointing to BA of the firstnode/list
 
 	int ch=1,val, repValue; // 1 for always true 0=flase
+	int firstVal, secVal;
 
 	while(ch)
 	{
@@ -77,9 +80,28 @@ int main()
 	sortListA(head);
 	dispList(head);
 
+	newNode = (LList *)malloc(sizeof(LList));
+	printf("\nInsert New Node Value: ");
+	scanf("%d",&newNode->val);
+	newNode->next = NULL;
+
+	printf("\nEnter the values of List where you want to insert the NN: ");
+	printf("\nFirst Value: ");
+	scanf("%d",&firstVal);
+	printf("\nSecond Value: ");
+	scanf("%d", &secVal);
+
+	if(insertNewNode(head, newNode, firstVal, secVal)==0)
+		printf("\nUnable to find the location\n");
+	else
+		printf("\nInserted the new node successfully\n");
+	dispList(head);
 
 	
 	printf("\n\n");
+
+	free(newNode);
+	free(head);
 	return 0;
 }
 
@@ -146,4 +168,28 @@ int sortListA(LList *head)
 	
 
 	return 0;
+}
+
+int insertNewNode(LList *head, LList *nn, int firstVal, int secVal)
+{
+	LList *prevNode;
+	LList *nextNode;
+	int flag = 0;
+
+	while(head != NULL)
+	{
+		if((head->val == firstVal) && (head->next->val == secVal))
+		{
+			prevNode = head;
+			nextNode = head->next;
+
+			prevNode->next = nn;
+			nn->next = nextNode;
+			flag = 1;
+			break;
+		}
+		head = head->next;
+	}
+
+	return flag;
 }
