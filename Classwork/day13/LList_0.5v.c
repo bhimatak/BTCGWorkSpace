@@ -16,7 +16,7 @@ int updateList(LList*, int, int);
 
 int sortListA(LList *);
 int revListA(LList *); // rev the existing list
-
+int deleteNode(LList *, int);
 int insertNewNode(LList *, LList *, int, int);
 
 
@@ -97,7 +97,15 @@ int main()
 		printf("\nInserted the new node successfully\n");
 	dispList(head);
 
-	
+	printf("\nEnter the node value to be deleted: ");
+	scanf("%d",&firstVal);
+
+	if(deleteNode(head, firstVal) == 0)
+		printf("\nUnable to find the value in list to be deleted\n");
+	else
+		printf("\nDeleted the node with the value: %d", firstVal);
+	dispList(head);
+
 	printf("\n\n");
 
 	free(newNode);
@@ -191,5 +199,35 @@ int insertNewNode(LList *head, LList *nn, int firstVal, int secVal)
 		head = head->next;
 	}
 
+	return flag;
+}
+
+
+int deleteNode(LList *head, int val)
+{
+	LList *prevNode;
+	LList *currNode;
+	int flag = 0;
+
+	if(head != NULL){
+		currNode = head;
+		prevNode = head;
+
+		while(currNode != NULL)
+		{
+
+			if(currNode->val == val)
+			{
+				prevNode->next = currNode->next;
+				flag = 1;
+				break;
+			}
+			else
+			{
+				prevNode = currNode;
+			}
+			currNode = currNode->next;
+		}
+	}
 	return flag;
 }
