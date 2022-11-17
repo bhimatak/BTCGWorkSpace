@@ -29,6 +29,7 @@ int main()
 	insertNode(root,60);
 	insertNode(root,70);
 	insertNode(root,80);
+
 	
 	printf("\nInOrder\n");
 	inOrderTras(root);
@@ -38,7 +39,20 @@ int main()
 
 	printf("\nPostOrder\n");
 	postOrderTras(root);
+
+	insertNode(root,25);
 	
+
+	printf("\nInOrder\n");
+	inOrderTras(root);
+	
+	printf("\nPreOrder\n");
+	preOrderTras(root);
+
+	printf("\nPostOrder\n");
+	postOrderTras(root);
+
+
 	printf("\n\n");
 	return 0;
 }
