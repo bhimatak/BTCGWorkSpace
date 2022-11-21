@@ -52,13 +52,7 @@ int wordCount(void) {/*function definition*/
 	return EXIT_SUCCESS;/*returns success*/
 
 }
-/******************************************************************************
-* *
-* *       Function Name   : free_memory
-* *       Description     : To free all the allocated memory
-* *       Returns         : Success or Failure
-* *
-* *******************************************************************************/
+
 int free_memory()/*declaring function*/
 {
 	char** str;/*str pointing to values in charater type*/
@@ -74,13 +68,7 @@ int free_memory()/*declaring function*/
 	str = NULL;/*assigned string to null*/
 	return EXIT_SUCCESS;/*return success*/
 }
-/******************************************************************************
-* *
-* *       Function Name   : extract
-* *       Description     : to extract and store words in heap. should allocate memory for each word as per its length.
-* *       Returns         : Success or Failure
-* *
-* *******************************************************************************/
+
 char* extract(char* word)/*declaring function*/
 {
 	char* temp = NULL;/*intializing temp pointer to null*/
@@ -101,13 +89,7 @@ char* extract(char* word)/*declaring function*/
 	return servername;/*returns servername*/
 
 }
-/******************************************************************************
-* *
-* *       Function Name   : main
-* *       Description     : Takes input through command line 
-* *       Returns         : Success or Failure
-* *
-* *******************************************************************************/
+
 int main(int argc, char* argv[])
 {
 	char** str;/*str pointer pointing to character data type*/
