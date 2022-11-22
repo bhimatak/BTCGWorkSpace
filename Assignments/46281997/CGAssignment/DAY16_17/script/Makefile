@@ -1,9 +1,10 @@
-SRC=src
-OBJ=obj
-BIN=bin
-INC=inc
-CC=gcc
-CFLAGS=-c -g -Wall
+SRC = src
+OBJ = obj
+BIN = bin
+INC = inc
+
+CC = gcc
+CFLAGS = -c -g -Wall
 
 all: $(BIN)/assign
 

@@ -14,7 +14,7 @@
 
 #include<stdio.h>
 #include<string.h>
-#include<stlib.h>
+#include<stdlib.h>
 #include<ctype.h>
 #include<unistd.h>
 

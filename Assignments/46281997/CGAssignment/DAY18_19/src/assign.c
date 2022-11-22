@@ -12,6 +12,9 @@
 
 #include <common.h>
 
+
+
+
 struct node{
 	char *string;
 	struct node *next;
@@ -19,8 +22,7 @@ struct node{
 struct node *start=NULL;
 struct node *nw,*temp;
 
-struct node* read(FILE *fp)
-{
+struct node* read(FILE *fp){
 	char line[128];
 	if(fp==NULL){
 		perror("Error: ");

@@ -9,125 +9,89 @@
 *********************************************************************************************************/
 
 #include <common.h>
-char longest[MAX];
-int words_tot = 0;
-int line_count = 0;
-int tot_words(char *filename)
+/****************************************************
+ ** FUNCTION NAME : swap
+ **
+ ** DESCRIPTION   : It swaps the strings in sorting order
+ **
+ ** RETURNS       : SUCCESS or FAILURE
+ **********************************************/
+ void swap(char* x,char* y)
 {
-	char ch;  
-	FILE *file;  
-
-	file = fopen(filename,"r");  
-	while((ch = fgetc(file)) != EOF){  
-		if(ch ==' ' || ch == '\n')  
-			words_tot++;  
-	} 
-	fclose(file);
-	return words_tot;
+	char t;
+	t=*x;
+	*x=*y;
+	*y=t;
 }
-char display(char *filename)
+int partition(char a[],int first, int last)
 {
-	FILE *fptr;
-	char c;
-
-	fptr = fopen(filename, "r");
-	c = fgetc(fptr);
-	while (c != EOF)
+	int i,j;//initializing 2 variables/
+	char x;//character intialization/
+	x=a[last];//character with last index/
+	i=first-1;//first index/
+	for(j=first;j<last;j++)//traverse through the array/
 	{
-		printf ("%c", c);
-		c = fgetc(fptr);
-	}
-	fclose(fptr);
-}
-char *longest_line(char *filename)
-{
-	FILE *fp;
-	char str[MAX];
-	int len=0;
-	fp=fopen(filename,"r");
-	if(fp==NULL)
-	{
-		printf("Error");
-		return 0;
-	}
-	while(fgets(str,sizeof(str),fp)!=NULL)
-	{
-		if(len<strlen(str))
+		if(a[j]<=x)//swapping condition/
 		{
-			strcpy(longest,str);
-			len=strlen(str);
+			i=i+1;
+			swap(&a[i],&a[j]);
 		}
 	}
-	return longest;
+	swap(&a[i+1],&a[last]);//swap of 1st and last index/
+	return i+1;//increment of strings/
 }
-int total_lines(char *filename)
-{
-	char ch;  
-	FILE *file;  
+/********************************
+ **
+ ** FUNCTION NAME : quicksort
+ **
+ ** DESCRIPTION   : This describes the quicksort analysis
+ **
+ ** RETURNS       : SUCCESS or FAILURE
+ *********************************/
 
-	file = fopen(filename,"r");  
-	if ( file != NULL )
-	{
-		char line[1000];
-		while (fgets(line, sizeof line, file) != NULL)
-		{
-			line_count++;
-		}
-	}
-	fclose(file);
-	return line_count;
-}
-char append_last_line(char *filename)
+void quicksort(char a[],int first,int last)
 {
-	FILE *fps;
-	FILE *fpr;
-	printf("\nAppending..on %d line",line_count);
-	fps = fopen(filename,"r");
-	fpr = fopen("write_data.txt", "w");
-	if (fpr == NULL) 
+	int pi;//initializing pivot/
+	if(first<last)//first index value <ladt index value/
 	{
-		puts("Not able to open this file");
-		fclose(fpr);
-		exit(1);
+		pi=partition(a,first,last);//assigning to pivot/
+		quicksort(a,first,pi-1);//condition check/
+		quicksort(a,pi+1,last);
 	}
-	if ( fps != NULL )
-	{
-		int ll = 1 ;
-		char line[1000];
-		while (fgets(line, sizeof line, fps) != NULL)
-		{
-			if(ll == line_count)
-			{
-				fputs(line,fpr);
-				fprintf(fpr,"\n");
-			}
-			ll++;
-		}
-	}
-	else
-	{
-		printf("File error!");
-		fclose(fps);
-	}
-	fclose(fps);
-	fclose(fpr);
 }
-char copy_data(char *filename)
+/*******************************
+ **
+ ** FUNCTION NAME : main
+ **
+ ** DESCRIPTION   : This function carry out the operations which was mentioned here
+ **
+ ** RETURNS       : SUCCESS or FAILURE
+ * *******************************/
+int main()
 {
-	FILE *fps;
-	FILE *fpr;
-	char data[MAX];
-	fps = fopen(filename,"r");
-	if (fps == NULL) 
+	char a[20][100];//initializing char array with 2D/
+	int i,first=0,last,size;//initializing with first,last values/
+	printf("Enter the number of string you want to store: ");//aska the user no. of strings to be stored/
+	scanf("%d",&size);//prints the strings/
+	printf("Enter %d strings",size);//enter string size/
+	for(i=0;i<=size;i++)//traverse the strings/
 	{
-		puts("cannot open this file");
-		exit(1);
+		fgets(a[i],100,stdin);//strings read from the keyboard/
+		last=strlen(a[i])-2;//stlength compare/
+		quicksort(a[i],first,last);//applying quick sort algorithm/
 	}
-	fpr = fopen("write_data.txt", "a");
-	if (fpr == NULL) 
-	{
-		puts("Not able to open this file");
-		fclose(fpr);
-		exit(1);
-	}
+	printf("\nsorted strings are:");//after sorting strings/
+	for(i=0;i<5;i++)//loop traversing/
+		printf("%s",a[i]);//prints string//
+	     return 0;
 }
+
+
+
+
+
+
+
+
+
+
