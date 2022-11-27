@@ -1,0 +1,54 @@
+1) pwd 
+2)1s
+
+3.a)mkdir d1
+
+3.b)mkdir d2/d1 
+
+3.c)cd d2
+
+3.d)touch f1.txt
+
+3.e)cat f1.txt
+
+3. f)cd d1 ls
+
+4) 1s-d name of current directory ls-r list all sub-directories
+
+5.b)ls-a
+
+5.c)1s-1
+
+6)15-S
+
+7)rm (temp1) (temp2) (temp3)
+
+8)head command
+
+9) mkdir testdir
+
+10.a)cp tb1.1
+
+10.b) cp-r new 10.c)mkdir new1
+
+10.d)cp tb2.1 tb6.1 tb7.1 tb10.1 10.e)cp-R newprogs
+
+11.a)mv is used for moving (or) renaming files and cp is used for copying files..
+
+used for removing directory.
+
+p is used for creating parent directory.
+
+12) rmdir testdir 13)man command
+
+15.a) to navigate into a Root directory 15.b) to navigate up one directory level
+
+15.c)it will take you to home directory from current directory
+
+15.d) takes to previous directory. ADVANCED OPTIONAL QUESTIONS:
+
+1)ls-i
+
+2) and it can combines two or more commands 3)used to list the currently running processes
+
+
