@@ -1,9 +1,11 @@
 CC = gcc
 
-INC = ../inc
-SRC = ../src
-OBJ = ../obj
-BIN = ../bin
+ProjDir = ~/BTCGWorkSpace/Classwork/day08
+
+INC = $(ProjDir)/inc
+SRC = $(ProjDir)/src
+OBJ = $(ProjDir)/obj
+BIN = $(ProjDir)/bin
 
 CFLAGS = -c -g -Wall
 
@@ -14,7 +16,7 @@ IFLAGS = -I $(INC)
 
 all: app1 app2 app3 app4 app5
 
-app1: $(OBJ)/main1.o
+app1: $(OBJ)/file01.o
 	$(CC) $(LDFLAGS) $(BIN)/app1 $?
 
 app2: $(OBJ)/main2.o
@@ -29,8 +31,8 @@ app4: $(OBJ)/main4.o
 app5: $(OBJ)/main5.o $(OBJ)/EmpStruct.o
 	$(CC) $(LDFLAGS) $(BIN)/app5 $(OBJ)/main5.o $(OBJ)/EmpStruct.o
 
-$(OBJ)/main1.o: $(SRC)/main1.c
-	$(CC) $(CFLAGS) $(SRC)/main1.c $(IFLAGS)
+$(OBJ)/file01.o: $(SRC)/file01.c
+	$(CC) $(CFLAGS) $(SRC)/file01.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
 $(OBJ)/main2.o: $(SRC)/main2.c
