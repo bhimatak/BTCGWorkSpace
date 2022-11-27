@@ -1,2 +1,0 @@
-1. State the command for the following  :Ans a) view current environment variables.b) Display the PATH environment variable value c) update PATH to include the path to your home directory
-How will you make the environment changes applicable to all users? Which script is to be modified?   Ans: To make the environment changes applicable to all users, go to your /etc/skel files, such as bashrc, and change the ones that are already there or enter the new ones. When you create new users, these /etc/skel files will be copied to the new user's home directory.
