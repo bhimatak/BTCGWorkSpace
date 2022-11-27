@@ -1,3 +1,19 @@
+/*************************************************************
+ * *
+ * *FILE NAME:day14-15.c
+ * *
+ * *DESCRIPTION:The file defines to take information about persons and then give the information about the last.
+ * *
+ * *REVISION HISTORY:
+ * *
+ * *DATE             NAME                   REFERENCE                  REASON
+ * *-------------------------------------------------------------------------------------------------------------------------
+ * *10 NOV 2022     Jasmeet Kaur            CAPG1234                   Code to perform given function
+ * *
+ * *Copyright @2022 Altran Group All Rights Reserved
+ * *
+ * *-----------------------------------------------------------------------------------------------------------------------
+ * */
 #include "common.h"
 
 struct person *ptr ;
