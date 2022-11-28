@@ -1,0 +1,66 @@
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.10.16.3-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Nov 25 09:55:27 IST 2022
+
+  System load:  0.0                Processes:             8
+  Usage of /:   0.7% of 250.98GB   Users logged in:       0
+  Memory usage: 2%                 IPv4 address for eth0: 172.24.248.171
+  Swap usage:   0%
+
+
+59 updates can be applied immediately.
+42 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+
+This message is shown once a day. To disable it please create the
+/root/.hushlogin file.
+root@DESKTOP-K2TO9R0:/mnt/c/Users/JASMEET/OneDrive/Desktop/CapG WS/ABCGWorkspace/sprint_01_v01#
+root@DESKTOP-K2TO9R0:/mnt/c/Users/JASMEET/OneDrive/Desktop/CapG WS/ABCGWorkspace/sprint_01_v01# cd bin
+root@DESKTOP-K2TO9R0:/mnt/c/Users/JASMEET/OneDrive/Desktop/CapG WS/ABCGWorkspace/sprint_01_v01/bin# valgrind ./DAMS
+==106== Memcheck, a memory error detector
+==106== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==106== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==106== Command: ./DAMS
+==106==
+
+        fopen() : No such file or directory
+
+        fopen() : No such file or directory
+
+        fopen() : No such file or directory
+
+        Enter admin id: 123
+
+        Logged In
+
+        **********************Welcome******************
+
+        ******************DOCTOR APPOINMENT MANAGEMENT SOFTWARE*********************
+
+        Press
+        1. Create Profile For Doctor
+        2. Create Profile For Patient
+        3.Book Appoinment
+        4.View Appointment
+        5. Update Profile forDoctor
+        6. Update Profile for Patient
+        7. Display Doctor Profile
+        8. Display Patient Profile
+        0. Exit
+        Choice:0
+==106==
+==106== HEAP SUMMARY:
+==106==     in use at exit: 0 bytes in 0 blocks
+==106==   total heap usage: 11 allocs, 11 frees, 7,952 bytes allocated
+==106==
+==106== All heap blocks were freed -- no leaks are possible
+==106==
+==106== For lists of detected and suppressed errors, rerun with: -s
+==106== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+root@DESKTOP-K2TO9R0:/mnt/c/Users/JASMEET/OneDrive/Desktop/CapG WS/ABCGWorkspace/sprint_01_v01/bin#
