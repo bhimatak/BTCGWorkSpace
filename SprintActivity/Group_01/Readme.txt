@@ -1,1 +1,0 @@
-Place all your sprint folder on to this directory
