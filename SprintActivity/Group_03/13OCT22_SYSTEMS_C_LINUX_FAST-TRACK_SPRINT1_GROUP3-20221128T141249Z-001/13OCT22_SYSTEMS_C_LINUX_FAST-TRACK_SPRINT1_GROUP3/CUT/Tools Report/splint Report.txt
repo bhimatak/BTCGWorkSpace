@@ -1,0 +1,18 @@
+Splint 3.1.2 --- 20 Feb 2018
+
+headers/commonheaders.h:20: Include file <unistd.h> matches the name of a POSIX
+    library, but the POSIX library is not being used.  Consider using +posixlib
+    or +posixstrictlib to select the POSIX library, or -warnposix to suppress
+    this message.
+  Header name matches a POSIX header, but the POSIX library is not selected.
+  (Use -warnposixheaders to inhibit warning)
+src/dnd_all.c: (in function generateId)
+src/dnd_all.c:25:9: Test expression for if not boolean, type size_t: size
+  Test expression type is not boolean or int. (Use -predboolint to inhibit
+  warning)
+src/dnd_all.c:29:15: Function srand expects arg 1 to be unsigned int gets
+                        time_t: time(0)
+  To allow arbitrary integral types to match any integral type, use
+  +matchanyintegral.
+src/dnd_all.c:30:20: Parse Error. (For help on parse errors, see splint -help
+                        parseerrors.)
