@@ -14,16 +14,7 @@ int main()
 	printf("\n enter the details :\n");
 	printf("name :");
 	fgets(emp.name);
-	printf("Id :");
-	scanf("%d", &emp.empId);
-	printf("Salary :");
-	scanf("%f", &emp.empsalary);
-	printf("phone number :");
-	scanf("%d", &emp.empnumber);
-	printf("address :");
-	scanf("%s", &emp.empaddress);
-	printf("gender :");
-	scanf("%s", &emp.empgender);
+	
 
 	printf("\n enter details is:");
 	printf("\n name: %s" , emp.name);
